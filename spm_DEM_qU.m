@@ -137,11 +137,13 @@ for i = 1:g
             c(j,:) = [];
             
             if size(V{i},1) < size(V{i},2)
-                fill([t fliplr(t)],[full(V{i} + y) fliplr(full(V{i} - y))],...
+              T = repmat(t,size(V{i},1),1);
+              fill([T fliplr(T)],[full(V{i} + y) fliplr(full(V{i} - y))],...
                     [1 1 1]*.8,'EdgeColor',[1 1 1]*.8)
             else
-                fill([t fliplr(t)]',[full(V{i} + y) fliplr(full(V{i} - y))]',...
-                    [1 1 1]*.8,'EdgeColor',[1 1 1]*.8)
+              T = repmat(t, size(V{i},1),1);
+              fill([T fliplr(T)]',[full(V{i} + y) fliplr(full(V{i} - y))]',...
+                   [1 1 1]*.8,'EdgeColor',[1 1 1]*.8)
             end
             try
                 plot(t,pV{i}','-.k')
