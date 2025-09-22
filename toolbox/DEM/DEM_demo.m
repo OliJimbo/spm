@@ -402,7 +402,7 @@ handles.web = 'Active inference sensory attenuation and illusions';
 run_demo_Callback(hObject, handles, 'ALAP_demo_attenuation')
 
 % --- Executes on button press in pushbutton248.
-function pushbutton248_Callback(hObject, eventdata, handles)
+function pushbutton128_Callback(hObject, eventdata, handles)
 handles.web = 'Observing the Observer I';
 run_demo_Callback(hObject, handles, 'spm_meta_model')
 
@@ -412,7 +412,7 @@ handles.web = 'Predictive Coding or Evidence Accumulation';
 run_demo_Callback(hObject, handles, 'DEM_evidence_accumulation')
 
 % --- Executes on button press in pushbutton130.
-function pushbutton130_Callback(hObject, eventdata, handles)
+function pushbutton162_Callback(hObject, eventdata, handles)
 handles.web = 'The anatomy of choice active inference and agency';
 run_demo_Callback(hObject, handles, 'spm_MDP_offer')
 
@@ -523,7 +523,7 @@ handles.web = 'Anatomically informed basis functions';
 run_demo_Callback(hObject, handles, 'DEM_spatial_deconvolution')
 
 % --- Executes on button press in pushbutton250.
-function pushbutton250_Callback(hObject, eventdata, handles)
+function pushbutton160_Callback(hObject, eventdata, handles)
 handles.web = 'Computational Nosology';
 run_demo_Callback(hObject, handles, 'DEM_demo_ontology')
 
