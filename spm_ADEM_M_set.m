@@ -73,7 +73,7 @@ M(g).n = 0;
 % default fields for static models (hidden states)
 %--------------------------------------------------------------------------
 if ~isfield(M,'f')
-    [M.f] = deal(inline('sparse(0,1)','x','v','a','P'));
+    [M.f] = deal(@(x,v,a,P) sparse(0,1));
     [M.x] = deal(sparse(0,1));
     [M.n] = deal(0);
 end
@@ -81,7 +81,7 @@ for i  = 1:g
     try
         fcnchk(M(i).f);
     catch
-        M(i).f = inline('sparse(0,1)','x','v','a','P');
+      M(i).f = @(x,v,a,P) sparse(0,1);
         M(i).x = sparse(0,1);
     end
 end
@@ -157,7 +157,7 @@ for i = (g - 1):-1:1
     try
         M(i).f = fcnchk(M(i).f);
         if nargin(M(i).f) ~= 4
-            M(i).f = inline(char(M(i).f),'x','v','a','P');
+            M(i).f = @(x,v,a,P) char(M(i).f));
         end
     end
     try
@@ -174,7 +174,7 @@ for i = (g - 1):-1:1
     try
         M(i).g = fcnchk(M(i).g);
         if nargin(M(i).g) ~= 4
-            M(i).g = inline(char(M(i).g),'x','v','a','P');
+            M(i).g = @(x,v,a,P) char(M(i).g));
         end
     end
     try

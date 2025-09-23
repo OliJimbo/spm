@@ -18,10 +18,15 @@ M       = spm_DEM_M('convolution model');
 
 % gradient functions for speed (not implemented here)
 %--------------------------------------------------------------------------
-% M(1).fx = inline('P.f','x','v','P');
-% M(1).fv = inline('P.h','x','v','P');
-% M(1).gx = inline('P.g','x','v','P');
-% M(1).gv = inline('sparse(4,1)','x','v','P');
+% M(1).fx = @(x,v,P) P.f;
+% M(1).fv = @(x,v,P) P.h;
+% M(1).gx = @(x,v,P) P.g;
+% M(1).gv = @(x,v,P) sparse(4,1);
+
+%% M(1).fx = inline('P.f','x','v','P');
+%% M(1).fv = inline('P.h','x','v','P');
+%% M(1).gx = inline('P.g','x','v','P');
+%% M(1).gv = inline('sparse(4,1)','x','v','P');
 
 M(1).E.nN = 8;                                 % number of E steps
 M(1).E.nE = 8;                                 % number of E steps
