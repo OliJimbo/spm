@@ -51,12 +51,12 @@ G(2).V  = exp(16);
  
 % state-dependent precision (attentional bias) in generative model (M):
 %--------------------------------------------------------------------------
-M(1).f  = inline('v - x/4','x','v','P');
-M(1).g  = inline('[x(1); sum(x)]','x','v','P');
+M(1).f  = @(x,v,P) v - x/4;
+M(1).g  = @(x,v,P) [x(1); sum(x)]
 M(1).x  = [0; 0];                      % hidden states
 M(1).v  = [0; 0];                      % hidden causes
 M(1).W  = exp(4);                      % precision (states)
-M(1).ph = inline('[1; 1]*(8 - h*tanh(v(1) + x(1)))','x','v','h','M');
+M(1).ph = @(x,v,h,M) [1; 1]*(8 - h*tanh(v(1) + x(1))) ;
 M(1).hE = 6;
  
  
