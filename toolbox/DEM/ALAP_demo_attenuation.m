@@ -33,8 +33,8 @@ M(1).E.method.v = 1;                   % state-dependent noise
 M(1).E.method.h = 0;                   % suppress optimisation
 M(1).E.method.g = 0;                   % suppress optimisation
  
-G(1).f  = inline('tanh(a) - x/4','x','v','a','P');
-G(1).g  = inline('[x; v + x]','x','v','a','P');
+G(1).f  = @(x,v,a,P) tanh(a) - x/4;
+G(1).g  = @(x,v,a,P) [x; v + x];
 G(1).x  = 0;                           % hidden state
 G(1).v  = [0; 0];                      % hidden cause (sensory data)
 G(1).V  = exp(8);                      % precision (noise)
