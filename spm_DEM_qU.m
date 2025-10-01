@@ -138,7 +138,7 @@ for i = 1:g
             
             if size(V{i},1) < size(V{i},2)
               T = repmat(t,size(V{i},1),1);
-              fill([T fliplr(T)],[full(V{i} + y) fliplr(full(V{i} - y))],...
+              fill([T fliplr(T)]',[full(V{i} + y) fliplr(full(V{i} - y))]',...
                     [1 1 1]*.8,'EdgeColor',[1 1 1]*.8)
             else
               T = repmat(t, size(V{i},1),1);

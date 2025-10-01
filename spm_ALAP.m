@@ -162,7 +162,7 @@ U     = DEM.U;
 % ensure embedding dimensions are compatible
 %--------------------------------------------------------------------------
 G(1).E.n = M(1).E.n;
-G(1).E.d = M(1).E.d;
+G(1).E.d = M(1).E.n;
 
 
 % set regularisation

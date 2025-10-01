@@ -140,7 +140,7 @@ spm_figure('GetWin','Figure 3');
 subplot(2,1,1)
 plot(hE,[Px; Qx])
 axis square
-xlabel('attenuation of sensory precision','FontSize',12)
+xlabel('attenuation of sensory precicion','FontSize',12)
 ylabel('true and perceived force exerted','FontSize',12)
 legend({'true','perceived'})
 title('Sensory attenuation and action','FontSize',16)
